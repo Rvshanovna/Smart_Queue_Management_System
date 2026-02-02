@@ -11,6 +11,8 @@ import { DoctorsModule } from './doctors/doctors.module';
 import { Specialty } from './specialties/entities/specialty.entity';
 import { Doctor } from './doctors/entities/doctor.entity';
 import { PatientsModule } from './patients/patients.module';
+import { Patient } from './patients/entities/patient.entity';
+import { AppoinmentsModule } from './appoinments/appoinments.module';
 
 @Module({
   imports: [
@@ -19,7 +21,7 @@ import { PatientsModule } from './patients/patients.module';
       url: envConfig.DB_URL,
       autoLoadEntities: true,
       synchronize: true,
-      entities: [User, Specialty, Doctor],
+      entities: [User, Specialty, Doctor, Patient],
     }),
     ServeStaticModule.forRoot({
       rootPath: join(process.cwd(), '..', envConfig.FILE_PATH),
@@ -29,7 +31,8 @@ import { PatientsModule } from './patients/patients.module';
     AuthModule,
     SpecialtiesModule,
     DoctorsModule,
-    PatientsModule
+    PatientsModule,
+    AppoinmentsModule
   ],
 })
 export class AppModule {}

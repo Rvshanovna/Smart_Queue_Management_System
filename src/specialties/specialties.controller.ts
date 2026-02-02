@@ -12,7 +12,6 @@ import { SpecialtiesService } from './specialties.service';
 import { CreateSpecialtyDto } from './dto/create-specialty.dto';
 import { UpdateSpecialtyDto } from './dto/update-specialty.dto';
 import { AuthGuard } from 'src/guard/auth.guard';
-import { AdminScopeGuard } from 'src/guard/admin-scope.guard';
 import { RoleGuard } from 'src/guard/role.guard';
 import { AccessRoles } from 'src/decorator/roles.decorator';
 import { Roles } from 'src/enum';

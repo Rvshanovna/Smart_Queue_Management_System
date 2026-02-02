@@ -1,6 +1,8 @@
+// src/doctors/entities/doctor.entity.ts
 import { BaseEntity } from 'src/common/BaseEntity';
 import { Specialty } from 'src/specialties/entities/specialty.entity';
-import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany } from 'typeorm';
+import { Patient } from 'src/patients/entities/patient.entity';
 
 @Entity('doctor')
 export class Doctor extends BaseEntity {
@@ -30,4 +32,10 @@ export class Doctor extends BaseEntity {
   })
   @JoinColumn({ name: 'specialty_id' })
   specialty: Specialty;
+
+  // 🔹 Yangi relation: doctor bir kunda ko‘plab patientlarni qabul qiladi
+  @OneToMany(() => Patient, (patient) => patient.doctor)
+  patients: Patient[];
+
+  appointments: any;
 }
