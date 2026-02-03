@@ -22,7 +22,7 @@ export class PatientGuard implements CanActivate {
       throw new ForbiddenException('You can only modify your own data');
     }
 
-    // Shu yerga kelib: 
+    // Shu yerga kelib:
     // - user patient
     // - route id bo'lsa, faqat o'z idsi bilan kelgan
     // Shuningdek appointment yaratish ham patient uchun ruxsat
